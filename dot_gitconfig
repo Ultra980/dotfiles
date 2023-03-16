@@ -1,0 +1,24 @@
+[user]
+	email = stan.alexandru@ichb.ro
+	name = Alex Stan
+	signingKey = 0B98A7F7A8A22DC5!
+[credential]
+	helper = 
+	helper = /usr/local/bin/git-credential-manager-core
+	credentialStore = cache
+	cacheOptions = --timeout 3000000000000000000
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[commit]
+	gpgsign = false
+[pull]
+	rebase = true
+[core]
+	autocrlf = input
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[init]
+	defaultBranch = master

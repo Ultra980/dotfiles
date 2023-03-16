@@ -1,0 +1,50 @@
+# Sample .bashrc for SUSE Linux
+# Copyright (c) SUSE Software Solutions Germany GmbH
+
+# There are 3 different types of shells in bash: the login shell, normal shell
+# and interactive shell. Login shells read ~/.profile and interactive shells
+# read ~/.bashrc; in our setup, /etc/profile sources ~/.bashrc - thus all
+# settings made here will also take effect in a login shell.
+#
+# NOTE: It is recommended to make language settings in ~/.profile rather than
+# here, since multilingual X sessions would not work properly if LANG is over-
+# ridden in every subshell.
+
+test -s ~/.alias && . ~/.alias || true
+export PATH=$PATH:/usr/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/home/ultra/.local/bin:/home/ultra/bin:/usr/bin:/home/ultra/.cargo/bin:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin
+export LANG=en_US.UTF-8
+if [[ $- = *i* ]] #&& command -v fish > /dev/null && command -v git > /dev/null && command -v hostname > /dev/null && false
+then
+  # exec fish
+  source ~/.profile
+fi
+export GPG_TTY=$(tty)
+source ~/.local/share/blesh/ble.sh --noinputrc
+eval "$(starship init bash)"
+alias cls="clear"
+alias dben="distrobox-enter"
+alias cls="clear"
+alias exa="exa --icons"
+alias dbex="distrobox-export --export-path ~/.local/bin --bin "
+alias trupd="sudo transactional-update"
+alias szi="sudo zypper in"
+alias sz="sudo zypper"
+alias sam="git commit -sam"
+export GPG_TTY=$(tty)
+
+#cpuclock() {
+#  while :
+#  do
+#    clear
+#    cat /proc/cpuinfo | grep MHz
+#    sleep 0.5
+#  done
+#}
+
+# eval "$(thefuck --alias)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(zoxide init bash)"
