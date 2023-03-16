@@ -1,9 +1,9 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     alias worldcup="podman run -ti -e TZ=America/Toronto world-cup-2022-cli-dashboard"
-    if test $(hostname) != 'debian.ultrapc' # the debian distrobox doesn't like exa
-        alias ls="exa --icons"
-    end
+    # if test $(hostname) != 'debian.ultrapc' # the debian distrobox doesn't like exa
+    #    alias ls="exa --icons"
+    # end
     alias cls="clear"
     alias dben="distrobox-enter"
  #   alias hx="helix"
