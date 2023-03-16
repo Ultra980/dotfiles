@@ -33,14 +33,14 @@ alias sz="sudo zypper"
 alias sam="git commit -sam"
 export GPG_TTY=$(tty)
 
-#cpuclock() {
-#  while :
-#  do
-#    clear
-#    cat /proc/cpuinfo | grep MHz
-#    sleep 0.5
-#  done
-#}
+cpuclock() {
+  while :
+  do
+    clear
+    cat /proc/cpuinfo | grep MHz
+    sleep 0.5
+  done
+}
 
 # eval "$(thefuck --alias)"
 
