@@ -20,7 +20,7 @@ then
   source ~/.profile
 fi
 export GPG_TTY=$(tty)
-source ~/.local/share/blesh/ble.sh --noinputrc
+# source ~/.local/share/blesh/ble.sh --noinputrc
 eval "$(starship init bash)"
 alias cls="clear"
 alias dben="distrobox-enter"
