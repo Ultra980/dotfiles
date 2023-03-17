@@ -1,0 +1,97 @@
+format = """
+[ ](bg:#4ab0bb)\
+[ ](bg:#5bc0cc)\
+[ ](bg:#6cd0dd)\
+[ ](bg:#7de0ee)\
+[   ](bg:#8ef0ff fg:#090c0c)\
+[](bg:#1692a4 fg:#8ef0ff)\
+$directory\
+[](fg:#1692a4 bg:#006d7d)\
+$git_branch\
+$git_status\
+[](fg:#006d7d bg:#004b5b)\
+$container\
+[](fg:#004b5b bg:#003a4a)\
+$sudo\
+[](fg:#003a4a bg:#002630)\
+$nodejs\
+$rust\
+$golang\
+$php\
+$python\
+[](fg:#002630 bg:#00171b)\
+$time\
+$status\
+[ ](fg:#00171b)
+[ ](bg:#4ab0bb)\
+[](fg:#5bc0cc) 󰘧 """
+
+[directory]
+style = "fg:#bef6ff bg:#1692a4"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "fg:#1692a4 bg:#006d7d"
+format = '[[ $symbol $branch ](fg:#1692a4 bg:#006d7d)]($style)'
+
+[git_status]
+style = "fg:#1692a4 bg:#006d7d"
+format = '[[($all_status$ahead_behind )](fg:#1692a4 bg:#006d7d)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#002630"
+format = '[[ $symbol ($version) ](fg:#1692a4 bg:#002630)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#002630"
+format = '[[ $symbol ($version) ](fg:#1692a4 bg:#002630)]($style)'
+
+[golang]
+symbol = "ﳑ"
+style = "bg:#002630"
+format = '[[ $symbol ($version) ](fg:#1692a4 bg:#002630)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#002630"
+format = '[[ $symbol ($version) ](fg:#1692a4 bg:#002630)]($style)'
+
+[python]
+symbol = ""
+style = "bg:#002630"
+format = '[[ $symbol ($version) ](fg:#1692a4 bg:#002630)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#00171b"
+format = '[[  $time ](fg:#bef6ff bg:#00171b)]($style)'
+
+[container]
+symbol = ""
+style = "fg:#bef6ff bg:#004b5b"
+format = '[ $symbol $name ]($style)'
+
+[status]
+disabled = false
+style = "bg:#00171b"
+success_symbol = '[](fg:#00ff00 bg:#00171b)'
+symbol = '[](fg:#ff0000 bg:#00171b)'
+format = "[ $symbol $status ]($style)"
+
+[sudo]
+symbol = ""
+style = "bg:#003b4b"
+format = "[ $symbol ]($style)"
+disabled = false
