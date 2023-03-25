@@ -27,4 +27,7 @@ if status is-interactive
     zoxide init fish | source
 
     export EDITOR=nvim
+    set -g EDITOR nvim
+
+    set -g NIXPKGS_ALLOW_UNFREE 1
 end
